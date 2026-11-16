@@ -32,13 +32,13 @@
 - Escribir código y comentarios en **español**; responder al usuario en español.
 - Lombok para getters/setters/constructores; no escribir código repetitivo a mano.
 - `Topico` es la clase titular; `Respuesta` es la clase de respuesta a `Topico`.
-- Nombres de packages en minúsculas (convención Java): `topicos`, `respuestas`.
+- Nombres de packages: `Topicos`, `respuestas`.
 - Validación de entrada con Bean Validation (`jakarta.validation`).
 
 ## Arquitectura
 - Monolito modular: cada módulo se separa en carpetas `controller`, `entity` y `service`.
 - Ubicación de los módulos (packages Java, aún no creados):
-  - Módulo Topicos: `src/main/java/JMR/SDD/ForoHub/topicos/`
+  - Módulo Topicos: `src/main/java/JMR/SDD/ForoHub/Topicos/`
   - Módulo Respuestas: `src/main/java/JMR/SDD/ForoHub/respuestas/`
 - `service`: lógica de negocio y mappers (entidad ↔ DTO).
 - `entity`: entidad JPA y su Repository (Spring Data JPA).

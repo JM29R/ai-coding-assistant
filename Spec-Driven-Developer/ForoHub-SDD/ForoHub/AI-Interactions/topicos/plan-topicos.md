@@ -7,7 +7,7 @@
 ## 1. Estructura del módulo
 
 ```
-src/main/java/JMR/SDD/ForoHub/topicos/
+src/main/java/JMR/SDD/ForoHub/Topicos/
 ├── controller/
 │   ├── TopicosController.java            // 5 endpoints REST, sin lógica
 │   ├── TopicoDTORequest.java             // record: titulo, mensaje, autor (todo menos id)

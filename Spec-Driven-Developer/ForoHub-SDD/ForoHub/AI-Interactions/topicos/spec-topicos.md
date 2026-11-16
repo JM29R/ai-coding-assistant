@@ -65,7 +65,7 @@ Módulo que gestiona el ciclo de vida completo de los **Topicos** del foro: crea
 - Duplicados: regla R2 → 400.
 - id inexistente o topico inactivo en detalle/actualizar/eliminar → 404.
 
-## 7. Arquitectura del módulo (package `JMR.SDD.ForoHub.topicos`)
+## 7. Arquitectura del módulo (package `JMR.SDD.ForoHub.Topicos`)
 
 **Flujo de datos (v1.2):** la entidad JPA nunca se expone en el controller; solo viaja entre service y repository.
 ```

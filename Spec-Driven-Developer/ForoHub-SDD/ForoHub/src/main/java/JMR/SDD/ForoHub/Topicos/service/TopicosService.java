@@ -5,6 +5,7 @@ import JMR.SDD.ForoHub.Topicos.controller.TopicoDTOResponse;
 import JMR.SDD.ForoHub.Topicos.entity.EstadoTopico;
 import JMR.SDD.ForoHub.Topicos.entity.Topico;
 import JMR.SDD.ForoHub.Topicos.entity.TopicoRepository;
+import JMR.SDD.ForoHub.respuestas.service.RespuestasService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,10 +21,15 @@ public class TopicosService {
 
     private final TopicoRepository topicoRepository;
     private final TopicoMapper topicoMapper;
+    private final RespuestasService respuestasService;
 
-    public TopicosService(TopicoRepository topicoRepository, TopicoMapper topicoMapper) {
+    public TopicosService(
+            TopicoRepository topicoRepository,
+            TopicoMapper topicoMapper,
+            RespuestasService respuestasService) {
         this.topicoRepository = topicoRepository;
         this.topicoMapper = topicoMapper;
+        this.respuestasService = respuestasService;
     }
 
     /**
@@ -98,11 +104,14 @@ public class TopicosService {
 
     /**
      * RF5: borrado logico; la fila permanece con estado INACTIVO (R4).
+     * R6: en la misma transaccion inactiva las respuestas activas del topico.
      */
     public void eliminar(Long id) {
         Topico topico = buscarActivoPorId(id);
         topico.setEstado(EstadoTopico.INACTIVO);
         topicoRepository.save(topico);
+
+        respuestasService.inactivarPorTopico(id);
     }
 
     private Topico buscarActivoPorId(Long id) {

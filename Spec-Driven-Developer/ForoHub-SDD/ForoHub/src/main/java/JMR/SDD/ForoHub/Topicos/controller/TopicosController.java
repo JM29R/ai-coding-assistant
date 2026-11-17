@@ -28,7 +28,7 @@ public class TopicosController {
         this.topicosService = topicosService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<TopicoDTOResponse> crear(@RequestBody TopicoDTORequest request) {
         TopicoDTOResponse creado = topicosService.crear(request);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -38,7 +38,7 @@ public class TopicosController {
         return ResponseEntity.created(location).body(creado);
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public ResponseEntity<List<TopicoDTOResponse>> listar() {
         return ResponseEntity.ok(topicosService.listar());
     }

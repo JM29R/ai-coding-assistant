@@ -1,6 +1,7 @@
 package JMR.SDD.ForoHub.respuestas.controller;
 
 import JMR.SDD.ForoHub.respuestas.service.RespuestasService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +32,8 @@ public class RespuestasController {
     @PostMapping
     public ResponseEntity<RespuestaDTOResponse> crear(@RequestBody RespuestaDTORequest request) {
         RespuestaDTOResponse creada = respuestasService.crear(request);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(creada.id())
-                .toUri();
-        return ResponseEntity.created(location).body(creada);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(creada);
     }
 
     @GetMapping("/topico/{topicoId}")

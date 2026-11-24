@@ -2,7 +2,7 @@
 
 > Versión aprobada · 2026-11-22
 > Ubicación: `AI-Interactions/spec-Evento/spec-Evento.md`
-> Esta spec define reglas de negocio y criterios de aceptación. La solución técnica se definirá en `plan.md`.
+> Esta spec define reglas de negocio y criterios de aceptación. La solución técnica se define en `plan-Evento.md`.
 
 ## 1. Propósito y alcance
 
@@ -133,10 +133,10 @@ Cálculo del estado efectivo:
 
 ## 6. Checklist de cierre para quien implemente
 
-- [ ] Leí esta spec completa antes de implementar.
-- [ ] Usé viñetas normales en secciones descriptivas y checkboxes solo en 5 y 6.
-- [ ] Respeté que En curso y Finalizado se calculan, no se asignan.
-- [ ] Marqué cada criterio de aceptación solo después de verificarlo.
-- [ ] No implementé la entidad Ticket ni su flujo.
-- [ ] No agregué autenticación, roles ni control de acceso.
-- [ ] Señalé cualquier decisión tomada que no estuviera en esta spec.
+- [x] Leí esta spec completa antes de implementar.
+- [x] Usé viñetas normales en secciones descriptivas y checkboxes solo en 5 y 6.
+- [x] Respeté que En curso y Finalizado se calculan, no se asignan.
+- [x] Marqué cada criterio de aceptación solo después de verificarlo.
+- [x] No implementé la entidad Ticket ni su flujo.
+- [x] No agregué autenticación, roles ni control de acceso.
+- [x] Señalé cualquier decisión tomada que no estuviera en esta spec.
